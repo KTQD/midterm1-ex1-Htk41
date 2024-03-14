@@ -1,23 +1,23 @@
-abstract class Item {
-    public String name;
-    private String description;
-    protected String ID;
-    float price;
+class Book extends Item {
+    private String author;
+    private int numberOfPages;
+    private String genre;
 
-    public Item(String name, String description, String ID, float price) {
-        this.name = name;
-        this.description = description;
-        this.ID = ID;
-        this.price = price;
+    public Book(String name, String description, String ID, float price, String author, int numberOfPages, String genre) {
+        super(name, description, ID, price);
+        this.author = author;
+        this.numberOfPages = numberOfPages;
+        this.genre = genre;
     }
 
-    public abstract void showInfo();
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
+    @Override
+    public void showInfo() {
+        System.out.println("Book Name: " + name);
+        System.out.println("Description: " + getDescription());
+        System.out.println("ID: " + ID);
+        System.out.println("Price: " + price);
+        System.out.println("Author: " + author);
+        System.out.println("Number of Pages: " + numberOfPages);
+        System.out.println("Genre: " + genre);
     }
 }
